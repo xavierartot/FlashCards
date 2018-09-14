@@ -1,0 +1,94 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADD_DECK	actions/index.js	/^export const ADD_DECK = 'ADD_DECK'$/;"	n
+App	App.js	/^class App extends React.Component {$/;"	c
+App	temp/App.js	/^export default class App extends React.Component {$/;"	c
+BarIcon	App.js	/^      tabBarIcon: ({ tintColor }) => <Ionicons color={tintColor} name="ios-card-outline" size={30} \/>,$/;"	c
+BarIcon	App.js	/^      tabBarIcon: ({ tintColor }) => <Ionicons color={tintColor} name="md-card" size={30} \/>,$/;"	c
+BarIcon	temp/App.js	/^      tabBarIcon: ({ tintColor }) => <Ionicons color={tintColor} name="ios-card-outline" size={30} \/>,$/;"	c
+BarIcon	temp/App.js	/^      tabBarIcon: ({ tintColor }) => <Ionicons color={tintColor} name="md-card" size={30} \/>,$/;"	c
+Color	App.js	/^          <FlashCardStatusBar backgroundColor={purple} barStyle="light-content" \/>$/;"	c
+Color	App.js	/^      <StatusBar backgroundColor={backgroundColor} translucent {...props} \/>$/;"	c
+Color	temp/App.js	/^          <FlashCardStatusBar backgroundColor={purple} barStyle="light-content" \/>$/;"	c
+Color	temp/App.js	/^      <StatusBar backgroundColor={backgroundColor} translucent {...props} \/>$/;"	c
+Datas	utils/api.js	/^export const getDatas = async () => {$/;"	c
+Deck	components/Deck.js	/^class Deck extends Component {$/;"	c
+Deck	temp/components/Deck.js	/^class Deck extends Component {$/;"	c
+DeckList	components/DeckList.js	/^class DeckList extends Component {$/;"	c
+DeckList	temp/components/DeckList.js	/^class DeckList extends Component {$/;"	c
+Decks	App.js	/^    Decks: {$/;"	c
+Decks	App.js	/^    Decks: {$/;"	o
+Decks	App.js	/^  Decks: {$/;"	c
+Decks	App.js	/^  Decks: {$/;"	o
+Decks	components/Decks.js	/^class Decks extends Component {$/;"	c
+Decks	temp/App.js	/^    Decks: {$/;"	c
+Decks	temp/App.js	/^    Decks: {$/;"	o
+Decks	temp/App.js	/^  Decks: {$/;"	c
+Decks	temp/App.js	/^  Decks: {$/;"	o
+Decks	temp/components/Decks.js	/^class Decks extends Component {$/;"	c
+Features	.eslintrc.js	/^    ecmaFeatures: {$/;"	c
+FlashCardStatusBar	App.js	/^function FlashCardStatusBar({ backgroundColor, ...props }) {$/;"	f
+FlashCardStatusBar	temp/App.js	/^function FlashCardStatusBar({ backgroundColor, ...props }) {$/;"	f
+JavaScript	temp/utils/helpers.js	/^  JavaScript: {$/;"	c
+JavaScript	temp/utils/helpers.js	/^  JavaScript: {$/;"	o
+JavaScript	utils/helpers.js	/^    JavaScript: {$/;"	c
+JavaScript	utils/helpers.js	/^    JavaScript: {$/;"	o
+LOAD_DATAS	utils/helpers.js	/^const LOAD_DATAS = 'Decks'$/;"	n
+NOTIFICATION_KEY	temp/utils/helpers.js	/^const NOTIFICATION_KEY = 'UdaciFitness:notifications'$/;"	n
+NewDeck	App.js	/^  NewDeck: {$/;"	c
+NewDeck	App.js	/^  NewDeck: {$/;"	o
+NewDeck	components/NewDeck.js	/^class NewDeck extends Component {$/;"	c
+NewDeck	temp/App.js	/^  NewDeck: {$/;"	c
+NewDeck	temp/App.js	/^  NewDeck: {$/;"	o
+NewDeck	temp/components/NewDeck.js	/^class NewDeck extends Component {$/;"	c
+Options	.eslintrc.js	/^  parserOptions: {$/;"	c
+Options	App.js	/^    navigationOptions: {$/;"	c
+Options	temp/App.js	/^    navigationOptions: {$/;"	c
+RECEIVE_DECKS	actions/index.js	/^export const RECEIVE_DECKS = 'RECEIVE_DECKS'$/;"	n
+React	temp/utils/helpers.js	/^  React: {$/;"	c
+React	temp/utils/helpers.js	/^  React: {$/;"	o
+React	utils/helpers.js	/^    React: {$/;"	c
+React	utils/helpers.js	/^    React: {$/;"	o
+Stacks	App.js	/^const Stacks = createStackNavigator($/;"	c
+Stacks	temp/App.js	/^const Stacks = createStackNavigator($/;"	c
+Tabs	App.js	/^const Tabs = createBottomTabNavigator({$/;"	c
+Tabs	temp/App.js	/^const Tabs = createBottomTabNavigator({$/;"	c
+addDeck	actions/index.js	/^export function addDeck(deck) {$/;"	f
+catch	utils/api.js	/^  } catch (error) {$/;"	f
+componentDidMount	App.js	/^  componentDidMount() {$/;"	f
+componentDidMount	components/Decks.js	/^  componentDidMount() {$/;"	f
+container	App.js	/^  container: {$/;"	o
+container	components/DeckList.js	/^  container: {$/;"	o
+container	temp/App.js	/^  container: {$/;"	o
+container	temp/components/DeckList.js	/^  container: {$/;"	o
+decks	reducers/index.js	/^function decks(state = {}, action) {$/;"	f
+ecmaFeatures	.eslintrc.js	/^    ecmaFeatures: {$/;"	o
+entries	temp/reducers/index.js	/^function entries(state = {}, action) {$/;"	f
+exports	.eslintrc.js	/^module.exports = {$/;"	o
+if	temp/utils/helpers.js	/^      if (data === null) {$/;"	f
+if	utils/api.js	/^    \/\/ if (value !== null) {$/;"	f
+loadDatas	utils/helpers.js	/^function loadDatas() {$/;"	f
+loadDecks	utils/helpers.js	/^export function loadDecks() {$/;"	f
+mapStateToProps	components/Decks.js	/^function mapStateToProps(state, props) {$/;"	f
+navigationOptions	App.js	/^    navigationOptions: {$/;"	o
+navigationOptions	temp/App.js	/^    navigationOptions: {$/;"	o
+parserOptions	.eslintrc.js	/^  parserOptions: {$/;"	o
+receiveDecks	actions/index.js	/^export function receiveDecks(decks) {$/;"	f
+render	App.js	/^  render() {$/;"	f
+render	components/Deck.js	/^  render() {$/;"	f
+render	components/DeckList.js	/^  render() {$/;"	f
+render	components/Decks.js	/^  render() {$/;"	f
+render	components/NewDeck.js	/^  render() {$/;"	f
+render	temp/App.js	/^  render() {$/;"	f
+render	temp/components/Deck.js	/^  render() {$/;"	f
+render	temp/components/DeckList.js	/^  render() {$/;"	f
+render	temp/components/Decks.js	/^  render() {$/;"	f
+render	temp/components/NewDeck.js	/^  render() {$/;"	f
+rules	.eslintrc.js	/^  rules: {$/;"	o
+setLocalNotification	temp/utils/helpers.js	/^export function setLocalNotification() {$/;"	f
+switch	reducers/index.js	/^  switch (action.type) {$/;"	f
+switch	temp/reducers/index.js	/^  switch (action.type) {$/;"	f
