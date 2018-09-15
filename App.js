@@ -69,8 +69,8 @@ class App extends React.Component {
   componentDidMount() {
     // loadDecks()
 
-    const ld = loadDatas()
-    AsyncStorage.setItem(LOAD_DATAS, JSON.stringify(ld))
+    const ld = loadDecks()
+    // AsyncStorage.setItem(LOAD_DATAS, JSON.stringify(ld))
   }
   render() {
     return (

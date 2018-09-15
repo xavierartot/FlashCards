@@ -14,3 +14,7 @@ export const getDatas = () => {
   }
 }
 
+
+export function fetchDecks() {
+  return AsyncStorage.getItem(LOAD_DATAS)
+}

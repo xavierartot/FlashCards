@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native'
 
+const styles = StyleSheet.create({
+  cardContainer: {
+    flex: 1,
+  },
+  card: {
+    textAlign: 'center',
+  },
+})
 class DeckList extends Component {
   render() {
     return (
@@ -21,9 +29,4 @@ class DeckList extends Component {
     )
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-})
 export default DeckList
