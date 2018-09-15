@@ -6,7 +6,8 @@ import { receiveDecks } from '../actions'
 import { getDatas } from '../utils/api'
 import { loadDecks, LOAD_DATAS, loadDatas } from '../utils/helpers'
 import Deck from './Deck'
-import { purple, white } from '../utils/colors'
+import { purple, white, lightPurp } from '../utils/colors'
+import { Ionicons } from '@expo/vector-icons'
 
 const styles = StyleSheet.create({
   container: {
@@ -17,13 +18,12 @@ const styles = StyleSheet.create({
   },
   containerTitle: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: purple,
-    maxHeight: 30,
-    // flexDirection: 'row',
-    height: 50,
-    width: 130,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    backgroundColor: lightPurp,
+    maxHeight: 40,
+    width: 150,
     // padding: 20,
     marginBottom: 30,
     borderBottomLeftRadius: 5,
@@ -35,12 +35,7 @@ const styles = StyleSheet.create({
     // flexDirection: 'column',
   },
   title: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     color: white,
-    flex: 1,
-    marginTop: 5,
     fontSize: 15,
   },
 })
@@ -61,6 +56,12 @@ class Decks extends Component {
           <Text style={styles.title}>
             CARD DECKS
           </Text>
+          <Ionicons
+            color={white}
+            name="ios-arrow-round-down"
+            size={30}
+            style={{ fontSize: 25 }}
+          />
         </View>
         <View style={styles.containerDecks}>
           {

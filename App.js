@@ -67,8 +67,6 @@ const styles = StyleSheet.create({
 })
 class App extends React.Component {
   componentDidMount() {
-    // loadDecks()
-
     const ld = loadDecks()
     // AsyncStorage.setItem(LOAD_DATAS, JSON.stringify(ld))
   }
