@@ -11,7 +11,7 @@ import {
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { Constants } from 'expo'
 // files
-import { loadDecks, LOAD_DATAS, loadDatas } from './utils/helpers'
+import { LOAD_DATAS, loadDatas } from './utils/helpers'
 import { receiveDecks } from './actions'
 import { purple, white } from './utils/colors'
 import reducer from './reducers'
@@ -66,10 +66,6 @@ const styles = StyleSheet.create({
   },
 })
 class App extends React.Component {
-  componentDidMount() {
-    const ld = loadDecks()
-    // AsyncStorage.setItem(LOAD_DATAS, JSON.stringify(ld))
-  }
   render() {
     return (
       <Provider store={store}>

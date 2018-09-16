@@ -73,15 +73,6 @@ export function loadDatas() {
         },
       ],
     },
-    React: {
-      title: 'React',
-      questions: [
-        {
-          question: 'What is a React?',
-          answer: 'React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.',
-        },
-      ],
-    },
     reactNative: {
       title: 'reactNative',
       questions: [
@@ -89,18 +80,16 @@ export function loadDatas() {
           question: 'What is a react-native?',
           answer: 'The combination of a function and the lexical environment within which that function was declared.',
         },
+        {
+          question: 'Can you use Androis and IOS?',
+          answer: 'yes',
+        },
       ],
     },
   }
 }
 
-// dispatch thunk
-// export function handleTemplate(color) {
-// return (dispatch, getState) => {
-// dispatch(changeTemplate(color))
-// }
-// }
-export function loadDecks() {
+export function handleInitDecks() {
   return (dispatch, getState) => {
     AsyncStorage.setItem(LOAD_DATAS, JSON.stringify(loadDatas()))
     dispatch(receiveDecks(loadDatas()))

@@ -4,7 +4,7 @@ import { View, Text, AsyncStorage, StyleSheet } from 'react-native'
 import DeckList from './DeckList'
 import { receiveDecks } from '../actions'
 import { getDatas } from '../utils/api'
-import { loadDecks, LOAD_DATAS, loadDatas } from '../utils/helpers'
+import { handleInitDecks, LOAD_DATAS, loadDatas } from '../utils/helpers'
 import Deck from './Deck'
 import { purple, white, lightPurp } from '../utils/colors'
 import { Ionicons } from '@expo/vector-icons'
@@ -45,7 +45,7 @@ class Decks extends Component {
   }
   componentDidMount() {
     const { dispatch } = this.props
-    dispatch(receiveDecks(loadDatas()))
+    dispatch(handleInitDecks())
   }
 
   render() {
@@ -78,9 +78,10 @@ class Decks extends Component {
   }
 }
 function mapStateToProps(state, props) {
-  const key = Object.keys(state)
+  const keys = Object.keys(state)
+  // alert(keys)
   return {
-    decks: key,
+    decks: keys,
   }
 }
 export default connect(mapStateToProps)(Decks)
