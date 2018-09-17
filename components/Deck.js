@@ -8,9 +8,6 @@ import { getRandomColor, purple, white } from '../utils/colors'
 import { withNavigation } from 'react-navigation'
 
 class Deck extends Component {
-  static navigationOptions = ({ navigation }) => ({
-    title: 'List Decks',
-  });
   componentWillMount() {
     const { dispatch, deck } = this.props
     AsyncStorage.getItem(LOAD_DATAS)
@@ -26,13 +23,15 @@ class Deck extends Component {
     const { navigate } = this.props.navigation
     const randColor = getRandomColor()
     // alert(JSON.stringify(this.props.navigation))
-    console.log(this.props, navigate)
+    // console.log(this.props, this.props.navigation)
     return (
       <View style={[styles.card, { backgroundColor: randColor }]}>
         <TouchableOpacity
-          onPress={() =>
-            navigate('DeckList', { deck })
-          }
+          onPress={() => {
+            navigate('DeckList', {
+              deck,
+            })
+          }}
           style={styles.center}
         >
           { deck }

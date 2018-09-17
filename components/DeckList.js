@@ -11,12 +11,16 @@ const styles = StyleSheet.create({
   },
 })
 class DeckList extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: 'List Decks',
+  });
   render() {
-    // const { deck } = this.props
+    const { deck, test, navigation } = this.props
+    console.log(this.props, navigation.state.params.deck, deck)
     return (
       <View>
         <Text>
-          xav
+          {navigation.state.params.deck}
         </Text>
         <Text>
           DeckList

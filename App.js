@@ -47,20 +47,25 @@ const Tabs = createBottomTabNavigator({
   },
 })
 // createStackNavigator(RouteConfigs, StackNavigatorConfig);
-const Stacks = createStackNavigator(
-  {
-  // routes
-    Decks: {
-      screen: Tabs,
-    },
-    DeckList: {
-      screen: DeckList,
-    },
-  }, // configs
-  {
-    headerMode: 'none',
+const Stacks = createStackNavigator({
+  // new routes
+  Decks: {
+    screen: Tabs,
+    navigationOptions: ({ navigation }) => ({
+      header: null,
+    }),
   },
-)
+  DeckList: {
+    screen: DeckList,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: purple,
+      },
+    },
+  },
+})
+
 
 const store = createStore(reducer, middlewares)
 

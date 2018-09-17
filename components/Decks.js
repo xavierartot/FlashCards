@@ -22,10 +22,11 @@ class Decks extends Component {
   }
   componentDidMount() {
     const { dispatch } = this.props
-    dispatch(handleInitDecks())
+    dispatch(handleInitDecks()) // fetch datas
   }
   render() {
     const { decks } = this.props
+    console.log(this.props)
     return (
       <View style={styles.container}>
         <View style={styles.containerTitle}>
@@ -43,7 +44,7 @@ class Decks extends Component {
           data={decks}
           keyExtractor={(item, i) => item}
           renderItem={({ item }) => (
-            <Deck deck={item} navigation />
+            <Deck deck={item} />
           )}
           style={styles.containerDecks}
         />
