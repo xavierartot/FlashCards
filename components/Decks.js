@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View, Text, AsyncStorage, StyleSheet } from 'react-native'
+import { FlatList, View, Text, AsyncStorage, StyleSheet } from 'react-native'
 import DeckList from './DeckList'
 import { receiveDecks } from '../actions'
 import { getDatas } from '../utils/api'
@@ -47,7 +47,6 @@ class Decks extends Component {
     const { dispatch } = this.props
     dispatch(handleInitDecks())
   }
-
   render() {
     const { decks } = this.props
     return (
@@ -64,14 +63,17 @@ class Decks extends Component {
           />
         </View>
         <View style={styles.containerDecks}>
-          {
-          decks &&
-          decks.map(e => (
-            <View key={e} >
-              <Deck deck={e} id={e} />
-            </View>
-          ))
-          }
+          <FlatList
+            data={[{ key: 'a' }, { key: 'b' }]}
+            renderItem={key => <Text>{key}</Text>}
+          />
+          /* {
+            <FlatList
+              data={decks}
+              keyExtractor={(item, index) => index}
+              renderItem={deck => <Deck key={deck} deck={deck} />}
+            />
+          } */
         </View>
       </View>
     )

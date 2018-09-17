@@ -22,12 +22,9 @@ class Deck extends Component {
     return (
       <View style={styles.card}>
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate(
-          'Decks',
-              { entryId: key },
-          )}
           style={styles.center}
         >
+          { deck }
           <Text style={styles.textFace}>
             { deck }
           </Text>
@@ -39,6 +36,7 @@ class Deck extends Component {
           </Text>
         </TouchableOpacity>
       </View>
+
     )
   }
 }
@@ -93,7 +91,9 @@ function mapStateToProps(state, { deck }) {
   // })
   // alert(`${deck} : ${JSON.stringify(questionsDeck[0])} :
   // ${questionsDeck[0].length}`)
-  const numberCards = questionsDeck[0].length
+  const numberCards = questionsDeck[0] !== undefined
+    ? questionsDeck[0].length
+    : ''
   return {
     titleDeck,
     questionsDeck: questionsDeck[0],
