@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { TouchableOpacity, View, Text, StyleSheet } from 'react-native'
+// import CardFlip from 'react-native-flip-card'
 
 const styles = StyleSheet.create({
   cardContainer: {
@@ -11,10 +12,11 @@ const styles = StyleSheet.create({
 })
 class DeckList extends Component {
   render() {
+    // const { deck } = this.props
     return (
       <View>
         <Text>
-          DeckList
+          xav
         </Text>
         <Text>
           DeckList

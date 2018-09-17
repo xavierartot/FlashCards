@@ -4,9 +4,13 @@ import { connect } from 'react-redux'
 import { LOAD_DATAS, loadDatas } from '../utils/helpers'
 import pick from 'lodash/pick'
 import { getRandomColor, purple, white } from '../utils/colors'
-// import FlipCard from 'react-native-flip-card'
+
+import { withNavigation } from 'react-navigation'
 
 class Deck extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: 'List Decks',
+  });
   componentWillMount() {
     const { dispatch, deck } = this.props
     AsyncStorage.getItem(LOAD_DATAS)
@@ -15,19 +19,20 @@ class Deck extends Component {
         // alert(data)
       })
   }
-  detailDeck = (deck) => {
-    alert(deck)
-  }
   render() {
     const {
-      numberCards, deck, questionsDeck, titleDeck,
+      numberCards, deck, questionsDeck, titleDeck, navigation,
     } = this.props
+    const { navigate } = this.props.navigation
     const randColor = getRandomColor()
-    // alert(getRandomColor())
+    // alert(JSON.stringify(this.props.navigation))
+    console.log(this.props, navigate)
     return (
       <View style={[styles.card, { backgroundColor: randColor }]}>
         <TouchableOpacity
-          onPress={() => this.detailDeck(deck)}
+          onPress={() =>
+            navigate('DeckList', { deck })
+          }
           style={styles.center}
         >
           { deck }
@@ -100,10 +105,11 @@ function mapStateToProps(state, { deck }) {
   const numberCards = questionsDeck[0] !== undefined
     ? questionsDeck[0].length
     : ''
+  console.log(this.props)
   return {
     titleDeck,
     questionsDeck: questionsDeck[0],
     numberCards,
   }
 }
-export default connect(mapStateToProps)(Deck)
+export default withNavigation(connect(mapStateToProps)(Deck))

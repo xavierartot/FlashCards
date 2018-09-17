@@ -53,6 +53,9 @@ const Stacks = createStackNavigator(
     Decks: {
       screen: Tabs,
     },
+    DeckList: {
+      screen: DeckList,
+    },
   }, // configs
   {
     headerMode: 'none',

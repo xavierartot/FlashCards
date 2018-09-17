@@ -43,7 +43,7 @@ class Decks extends Component {
           data={decks}
           keyExtractor={(item, i) => item}
           renderItem={({ item }) => (
-            <Deck deck={item} />
+            <Deck deck={item} navigation />
           )}
           style={styles.containerDecks}
         />
