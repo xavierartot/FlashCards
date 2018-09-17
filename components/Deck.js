@@ -3,7 +3,7 @@ import { TouchableOpacity, AsyncStorage, View, Text, StyleSheet } from 'react-na
 import { connect } from 'react-redux'
 import { LOAD_DATAS, loadDatas } from '../utils/helpers'
 import pick from 'lodash/pick'
-import { purple, white } from '../utils/colors'
+import { getRandomColor, purple, white } from '../utils/colors'
 // import FlipCard from 'react-native-flip-card'
 
 class Deck extends Component {
@@ -15,13 +15,19 @@ class Deck extends Component {
         // alert(data)
       })
   }
+  detailDeck = (deck) => {
+    alert(deck)
+  }
   render() {
     const {
       numberCards, deck, questionsDeck, titleDeck,
     } = this.props
+    const randColor = getRandomColor()
+    // alert(getRandomColor())
     return (
-      <View style={styles.card}>
+      <View style={[styles.card, { backgroundColor: randColor }]}>
         <TouchableOpacity
+          onPress={() => this.detailDeck(deck)}
           style={styles.center}
         >
           { deck }

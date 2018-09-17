@@ -42,7 +42,9 @@ class Decks extends Component {
         <FlatList
           data={decks}
           keyExtractor={(item, i) => item}
-          renderItem={({ item }) => <Deck deck={item} />}
+          renderItem={({ item }) => (
+            <Deck deck={item} />
+          )}
           style={styles.containerDecks}
         />
       </View>

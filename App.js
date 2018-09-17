@@ -60,6 +60,7 @@ const Stacks = createStackNavigator(
 )
 
 const store = createStore(reducer, middlewares)
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
