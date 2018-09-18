@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, AsyncStorage, View, Text, StyleSheet } from 'react-native'
+import { Button, TouchableOpacity, AsyncStorage, View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { LOAD_DATAS, loadDatas } from '../utils/helpers'
 import pick from 'lodash/pick'
@@ -17,6 +17,7 @@ class Deck extends Component {
       })
   }
   render() {
+    console.ignoredYellowBox = ['Warning: setState(...)']
     const {
       numberCards, deck, questionsDeck, titleDeck, navigation,
     } = this.props
@@ -24,14 +25,20 @@ class Deck extends Component {
     const randColor = getRandomColor()
     // alert(JSON.stringify(this.props.navigation))
     // console.log(this.props, this.props.navigation)
+    const numberCard = numberCards && numberCards > 1
+      ? `${numberCards} cards`
+      : `${numberCards} card`
+    console.log(deck, randColor, numberCard)
+
     return (
       <View style={[styles.card, { backgroundColor: randColor }]}>
         <TouchableOpacity
-          onPress={() => {
-            navigate('DeckList', {
-              deck,
-            })
-          }}
+          onPress={() => navigate(
+            'DeckList',
+            {
+                deck, randColor, numberCard,
+            },
+          )}
           style={styles.center}
         >
           { deck }
@@ -39,10 +46,7 @@ class Deck extends Component {
             { deck }
           </Text>
           <Text style={styles.textFaceLabel}>
-            { numberCards && numberCards > 1
-          ? `${numberCards} cards`
-          : `${numberCards} card`
-          }
+            { numberCard }
           </Text>
         </TouchableOpacity>
       </View>
@@ -95,12 +99,6 @@ function mapStateToProps(state, { deck }) {
   const titleDeck = deckObj.map(e => e.title)
 
   const questionsDeck = deckObj.map(e => e.questions)
-  // alert(JSON.stringify(questionsDeck))
-  // const test = questionsDeck.map((e) => {
-  // alert(` ${e}: ${e.questions} : ${Object.keys([...e.questions])}`)
-  // })
-  // alert(`${deck} : ${JSON.stringify(questionsDeck[0])} :
-  // ${questionsDeck[0].length}`)
   const numberCards = questionsDeck[0] !== undefined
     ? questionsDeck[0].length
     : ''

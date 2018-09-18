@@ -18,7 +18,7 @@ import { Ionicons } from '@expo/vector-icons'
 
 class Decks extends Component {
   state = {
-    ready: null,
+    ready: null, // remove the header
   }
   componentDidMount() {
     const { dispatch } = this.props
