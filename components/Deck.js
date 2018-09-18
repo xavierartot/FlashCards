@@ -5,7 +5,7 @@ import { LOAD_DATAS, loadDatas } from '../utils/helpers'
 import pick from 'lodash/pick'
 import { getRandomColor, purple, white } from '../utils/colors'
 
-import { withNavigation } from 'react-navigation'
+import { NavigationActions, withNavigation } from 'react-navigation'
 
 class Deck extends Component {
   componentWillMount() {
@@ -23,22 +23,20 @@ class Deck extends Component {
     } = this.props
     const { navigate } = this.props.navigation
     const randColor = getRandomColor()
-    // alert(JSON.stringify(this.props.navigation))
     // console.log(this.props, this.props.navigation)
     const numberCard = numberCards && numberCards > 1
       ? `${numberCards} cards`
       : `${numberCards} card`
-    console.log(deck, randColor, numberCard)
+    // console.log(deck, randColor, numberCard)
 
+    const navigateAction = NavigationActions.navigate({
+      routeName: 'DeckDetail',
+      params: { deck, randColor, numberCard },
+    })
     return (
       <View style={[styles.card, { backgroundColor: randColor }]}>
         <TouchableOpacity
-          onPress={() => navigate(
-            'DeckList',
-            {
-                deck, randColor, numberCard,
-            },
-          )}
+          onPress={() => this.props.navigation.dispatch(navigateAction)}
           style={styles.center}
         >
           { deck }
@@ -102,7 +100,7 @@ function mapStateToProps(state, { deck }) {
   const numberCards = questionsDeck[0] !== undefined
     ? questionsDeck[0].length
     : ''
-  console.log(this.props)
+  // console.log(this.props)
   return {
     titleDeck,
     questionsDeck: questionsDeck[0],

@@ -17,7 +17,7 @@ import { purple, white } from './utils/colors'
 import reducer from './reducers'
 // components
 import Decks from './components/Decks'
-import DeckList from './components/DeckList'
+import DeckDetail from './components/DeckDetail'
 import NewDeck from './components/NewDeck'
 
 import middlewares from './middleware'
@@ -55,12 +55,14 @@ const Stacks = createStackNavigator({
       header: null,
     }),
   },
-  DeckList: {
-    screen: DeckList,
+  DeckDetail: {
+    screen: DeckDetail,
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {
         backgroundColor: purple,
+      },
+      headerTitleStyle: {
       },
     },
   },

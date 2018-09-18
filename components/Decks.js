@@ -8,7 +8,7 @@ import {
   AsyncStorage,
   StyleSheet,
 } from 'react-native'
-import DeckList from './DeckList'
+import DeckDetail from './DeckDetail'
 // import { receiveDecks } from '../actions'
 // import { getDatas } from '../utils/api'
 import { handleInitDecks } from '../utils/helpers'
