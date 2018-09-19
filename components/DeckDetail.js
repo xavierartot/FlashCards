@@ -19,7 +19,7 @@ class DeckDetail extends Component {
     const {
       deckObject, color, nameDeck, navigation,
     } = this.props
-    console.log(deckObject, color, nameDeck, navigation)
+    // console.log(deckObject, color, nameDeck, navigation)
     // return () => navigation.dispatch(navigateAction)
   }
   render() {

@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, Animated } from 'react-native'
-import { purple, white, lightPurp, blue } from '../utils/colors'
+import { getRandomColor, white, lightPurp, blue } from '../utils/colors'
 
 import FlipCard from 'react-native-flip-card'
 
 class Card extends Component {
+  randomColor= (color) => {
+    const randColor = getRandomColor()
+    if (randColor === color) {
+      return this.randomColor()
+    }
+    return randColor
+  }
   render() {
     const { question, answer, color } = this.props
-    console.log(question)
-    console.log(answer)
+    console.log(color, this.randomColor())
     return (
       <View style={styles.container}>
         <FlipCard
@@ -21,51 +27,49 @@ class Card extends Component {
           perspective={1000}
           style={styles.card}
         >
-          <View style={styles.face}>
-            <Text>The Face</Text>
+          <View style={[styles.back, { backgroundColor: this.randomColor(color) }]}>
+            <Text style={styles.cardText}>
+              {answer}
+            </Text>
           </View>
-          <View style={styles.back}>
-            <Text>The Back</Text>
+          <View style={[styles.face, { backgroundColor: color }]}>
+            <Text style={styles.cardText}>
+              {question}
+            </Text>
           </View>
         </FlipCard>
-        {/*
-        <Text style={styles.face}>
-          {question}
-        </Text>
-        <Text style={styles.back}>
-          {answer}
-        </Text> */}
       </View>
     )
   }
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     flexDirection: 'column',
-    maxHeight: 300,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
-  flipCard: {
+  card: {
     flex: 1,
-    borderWidth: 5,
-    height: 300,
+    maxHeight: 200,
+    width: 200,
+    borderWidth: 0,
+    marginTop: 10,
   },
-
+  cardText: {
+    color: white,
+  },
   face: {
     flex: 1,
-    backgroundColor: purple,
-    borderWidth: 5,
-    height: 300,
-    // height: 200,
+    backgroundColor: 'red',
+    // color: white,
   },
 
   back: {
     flex: 1,
-    backgroundColor: blue,
-    borderWidth: 5,
-    // height: 200,
+    backgroundColor: 'orange',
+    // color: white,
   },
 })
 export default Card

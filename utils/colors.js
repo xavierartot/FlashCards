@@ -20,3 +20,11 @@ export const getRandomColor = () => {
   ]
   return colorValues[Math.floor(Math.random() * colorValues.length)]
 }
+
+export const randomColor = (color) => {
+  const randColor = getRandomColor()
+  if (randColor === color) {
+    return randomColor()
+  }
+  return randColor
+}

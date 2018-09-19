@@ -14,19 +14,12 @@ class Quiz extends Component {
      const deckObject = navigation.state.params.nameDeck
      const color = navigation.state.params.color
      const nameDeck = Object.values(navigation.state.params.deckObject)
-     console.log(nameDeck)
-     nameDeck.map((item) => {
-       console.log(item.question)
-       console.log(item.answer)
-     })
-
      return (
        <View>
          <Text style={{ color }}>
            {nameDeck.map((item, id) => (
-             <Card key={item.id} answer={item.answer} question={item.question} />
+             <Card key={item.id} answer={item.answer} color={color} question={item.question} />
           ))}
-
          </Text>
        </View>
      )
