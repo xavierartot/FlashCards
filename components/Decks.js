@@ -16,6 +16,7 @@ import Deck from './Deck'
 import { purple, white, lightPurp } from '../utils/colors'
 import { Ionicons } from '@expo/vector-icons'
 
+
 class Decks extends Component {
   state = {
     ready: null, // remove the header
@@ -40,6 +41,7 @@ class Decks extends Component {
             style={{ fontSize: 25 }}
           />
         </View>
+
         <FlatList
           data={decks}
           keyExtractor={(item, i) => item}

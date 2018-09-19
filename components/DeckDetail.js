@@ -1,55 +1,77 @@
 import React, { Component } from 'react'
 import { TouchableOpacity, View, Text, StyleSheet } from 'react-native'
+import { connect } from 'react-redux'
 import { purple, white, lightPurp, blue } from '../utils/colors'
-// import CardFlip from 'react-native-flip-card'
 import Button from 'react-native-button'
+import { NavigationActions, withNavigation } from 'react-navigation'
+// components
+import Quiz from './Quiz'
 
 class DeckDetail extends Component {
   // header navigation
    static navigationOptions = ({ navigation }) => ({
      title: navigation.state.params.deck,
    });
-   render() {
-     // console.ignoredYellowBox = ['Warning: setState(...)']
-     const {
-       numberCard, randColor, deck, test, navigation,
-     } = this.props
-     // console.log(numberCard, this.props, navigation.state.params.deck, deck)
-     return (
-       <View style={styles.container}>
-         <Text style={styles.title}>
-           {navigation.state.params.deck}
-         </Text>
-         <Text style={styles.subTitle}>
-           {navigation.state.params.numberCard}
-         </Text>
-         <View style={{ marginTop: 10 }}>
-           <Button
-             containerStyle={{
-               padding: 12, height: 55, overflow: 'hidden', borderRadius: 5, backgroundColor: lightPurp, marginBottom: 10, width: 300,
+  handleAddCard = () => {
+  }
+  handleStartQuiz = (view) => {
+    // console.log(this.props)
+    const {
+      deckObject, color, nameDeck, navigation,
+    } = this.props
+    console.log(deckObject, color, nameDeck, navigation)
+    // return () => navigation.dispatch(navigateAction)
+  }
+  render() {
+    const {
+      deckObject, color, nameDeck, navigation,
+    } = this.props
+    // const navigateAction = NavigationActions.navigate({
+    // routeName: 'Quiz',
+    // params: { deckObject, color, nameDeck },
+    // })
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>
+          {nameDeck }
+        </Text>
+        <Text style={styles.subTitle}>
+          {nameDeck }
+        </Text>
+        <View style={{ marginTop: 10 }}>
+          <Button
+            containerStyle={{
+              padding: 12,
+              height: 55,
+              overflow: 'hidden',
+              borderRadius: 5,
+              backgroundColor: white,
+              marginBottom: 10,
+              width: 300,
              }}
-             disabledContainerStyle={{ backgroundColor: 'pink' }}
-             onPress={() => this._handlePress()}
-             style={{ fontSize: 25, color: 'white' }}
-             styleDisabled={{ color: 'white' }}
-           >
+            deck={nameDeck}
+            disabledContainerStyle={{ backgroundColor: 'pink' }}
+            onPress={() => this.handleAddCard()}
+            style={{ fontSize: 25, color }}
+            styleDisabled={{ color }}
+          >
 Add Card
-           </Button>
-           <Button
-             containerStyle={{
-               padding: 12, height: 55, overflow: 'hidden', borderRadius: 5, backgroundColor: blue, marginBottom: 10,
+          </Button>
+          <Button
+            containerStyle={{
+               padding: 12, height: 55, overflow: 'hidden', borderRadius: 5, backgroundColor: color, marginBottom: 10,
              }}
-             disabledContainerStyle={{ backgroundColor: 'pink' }}
-             onPress={() => this._handlePress()}
-             style={{ fontSize: 25, color: 'white' }}
-             styleDisabled={{ color: 'white' }}
-           >
+            disabledContainerStyle={{ backgroundColor: color }}
+            onPress={() => navigation.navigate('Quiz', { deckObject, color, nameDeck })}
+            style={{ fontSize: 25, color: 'white' }}
+            styleDisabled={{ color: 'white' }}
+          >
 Start Quiz
-           </Button>
-         </View>
-       </View>
-     )
-   }
+          </Button>
+        </View>
+      </View>
+    )
+  }
 }
 const styles = StyleSheet.create({
   container: {
@@ -78,4 +100,13 @@ const styles = StyleSheet.create({
   },
 
 })
-export default DeckDetail
+function mapStateToProps(decks, { navigation }) {
+  // console.log(decks[navigation.state.params.deck])
+  // console.log(decks[navigation.state.params.deck].questions)
+  return {
+    deckObject: decks[navigation.state.params.deck].questions,
+    color: navigation.state.params.randColor,
+    nameDeck: navigation.state.params.deck,
+  }
+}
+export default connect(mapStateToProps)(DeckDetail)

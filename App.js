@@ -19,6 +19,7 @@ import reducer from './reducers'
 import Decks from './components/Decks'
 import DeckDetail from './components/DeckDetail'
 import NewDeck from './components/NewDeck'
+import Quiz from './components/Quiz'
 
 import middlewares from './middleware'
 
@@ -57,6 +58,17 @@ const Stacks = createStackNavigator({
   },
   DeckDetail: {
     screen: DeckDetail,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: purple,
+      },
+      headerTitleStyle: {
+      },
+    },
+  },
+  Quiz: {
+    screen: Quiz,
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {
